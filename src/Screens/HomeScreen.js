@@ -65,10 +65,14 @@ function HomeScreen() {
                 <View style={{marginTop: '-20%'}}>
                   <Text style={styles.postTitle}>{post.title}</Text>
                   <Text style={styles.postTitle}>{post.description}</Text>
-                  <Text style={styles.postDate}>KU Music Club</Text>
+                  <Text style={styles.postDate}>Author Id: {post.ownerId}</Text>
+                  <Text style={styles.postParticipants}>Location: {post.location}</Text>
+
                 </View>
                 <View style={{flexDirection: 'row', marginRight: 20}}>
-                  <Text style={styles.postParticipants}>unal, gokber, abdulla and others are joining</Text>
+                  <Text style={styles.postParticipants}>Participant Ids: {post.users_joining}</Text>
+                  <Text style={styles.postParticipants}> Like Ids: {post.users_liked}</Text>
+
                   <Ionicons name="bookmark-outline" color={'red'} size={20} />
                 </View>
               </View>

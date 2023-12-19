@@ -15,6 +15,7 @@ const { StatusBarManager } = NativeModules;
 function CreateScreen() {
     const [title, onChangeTitle] = useState('Title');
     const [description, onChangeDescription] = useState('Description');
+    const [location, onChangeLocation] = useState('Location');
     const [image, setImage] = useState(null);
     const [imageFile, setImageFile] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
@@ -42,8 +43,9 @@ function CreateScreen() {
     const postEvent = () => {
       const formData = new FormData();
       formData.append('eventImg', selectedFile)
-      formData.append('eventTitle', 'Your Title Here');
-      formData.append('eventDescription', 'Your Description Here');
+      formData.append('eventTitle', title);
+      formData.append('eventDescription', description);
+      formData.append('location', location);
       console.log(formData)
       for (var pair of formData.entries()) {
         console.log(pair[0]+ ', ' + pair[1]); 
@@ -169,6 +171,11 @@ function CreateScreen() {
                     style={styles.input}
                     onChangeText={onChangeDescription}
                     value={description}
+                  />
+                  <TextInput
+                    style={styles.input}
+                    onChangeText={onChangeLocation}
+                    value={location}
                   />
                   </View>
                   
