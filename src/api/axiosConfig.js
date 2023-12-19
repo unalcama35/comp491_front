@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // Create an instance of Axios with custom configuration
 const axiosInstance = axios.create({
-// baseURL: 'https://kucialapi.azurewebsites.net/api', // online api
- baseURL: 'https://localhost:7064/api', // local api
+ baseURL: 'https://kucialapi.azurewebsites.net/api', // online api
+// baseURL: 'https://localhost:7064/api', // local api
 
   timeout: 5000, // Request timeout in milliseconds (adjust as needed)
   headers: {
